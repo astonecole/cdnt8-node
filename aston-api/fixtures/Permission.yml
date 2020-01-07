@@ -1,0 +1,11 @@
+entity: Permission
+items:
+  permission1:
+    operation: "AccountView"
+    description: "View Account"
+  permission2:
+    operation: "AccountEdit"
+    description: "Edit account"
+  permission3:
+    operation: "ChangePassword"
+    description: "Change Password"

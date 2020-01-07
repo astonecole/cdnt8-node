@@ -5,8 +5,11 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
     ManyToMany,
-    JoinTable
+    JoinTable,
+    BeforeInsert,
+    BeforeUpdate
 } from 'typeorm';
+
 import { Role } from './Role';
 
 @Entity()
@@ -27,8 +30,8 @@ export class User {
     @Column()
     lastName: string;
 
-    // @Column()
-    // birth: Date = new Date();
+    @Column('timestamp')
+    birth: Date;
 
     @Column('timestamp')
     birthdate: Date = new Date();
@@ -42,4 +45,10 @@ export class User {
 
     @UpdateDateColumn()
     updatedAt: Date;
+
+    @BeforeUpdate()
+    @BeforeInsert()
+    updateDates() {
+        this.birth = new Date();
+    }
 }

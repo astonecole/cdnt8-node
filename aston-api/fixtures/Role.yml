@@ -8,3 +8,8 @@ items:
     name: "Member"
   role4:
     name: "User"
+    permissions:
+      - "@permission1"
+      - "@permission2"
+      - "@permission3"
+
