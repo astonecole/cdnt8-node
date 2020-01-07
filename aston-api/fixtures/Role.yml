@@ -1,0 +1,10 @@
+entity: Role
+items:
+  role1:
+    name: "Administrator"
+  role2:
+    name: "Manager"
+  role3:
+    name: "Member"
+  role4:
+    name: "User"
