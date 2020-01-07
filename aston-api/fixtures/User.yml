@@ -1,0 +1,6 @@
+entity: User
+items:
+  user1:
+    firstName: 'Steven'
+    lastName: 'Seagle'
+    age: 60

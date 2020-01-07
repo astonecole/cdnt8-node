@@ -33,6 +33,8 @@
    },
    "scripts": {
       "start": "ts-node src/index.ts",
-      "dev": "nodemon"
+      "dev": "nodemon",
+      "test": "mocha --watch --require ts-node/register --watch-extension ts test/**/*.spec.ts",
+      "fixtures": "fixtures ./fixtures --config ormconfig.json --sync --require ts-node/register"
    }
 }
