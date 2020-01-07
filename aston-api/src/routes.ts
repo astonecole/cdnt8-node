@@ -1,6 +1,13 @@
-import {UserController} from "./controller/UserController";
+import { UserController } from "./controller/UserController";
+import { DefaultController } from "./controller/DefaultController";
 
 export const Routes = [{
+    method: "get",
+    route: "/",
+    controller: DefaultController,
+    action: "hello"
+},
+{
     method: "get",
     route: "/users",
     controller: UserController,
