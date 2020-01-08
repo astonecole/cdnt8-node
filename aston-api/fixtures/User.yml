@@ -3,7 +3,7 @@ items:
   user1:
     email: 'john.doe@gmail.com'
     firstName: 'John'
-    lastName: 'DOe'
+    lastName: 'Doe'
     password: '1234'
     birthdate: '2020-01-07T13:28:59.308Z'
     roles:

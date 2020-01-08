@@ -31,12 +31,11 @@ export class User {
     lastName: string;
 
     @Column('timestamp')
-    birth: Date;
-
-    @Column('timestamp')
     birthdate: Date = new Date();
 
-    @ManyToMany(type => Role, role => role.users)
+    @ManyToMany(type => Role, role => role.users, {
+        eager: true
+    })
     @JoinTable({ name: 'user_has_role' })
     roles: Role[];
 
@@ -49,6 +48,6 @@ export class User {
     @BeforeUpdate()
     @BeforeInsert()
     updateDates() {
-        this.birth = new Date();
+        this.birthdate = new Date();
     }
 }
