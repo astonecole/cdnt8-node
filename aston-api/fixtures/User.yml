@@ -4,7 +4,7 @@ items:
     email: 'john.doe@gmail.com'
     firstName: 'John'
     lastName: 'Doe'
-    password: '1234'
+    password: '$2a$10$hitnMrwkyAr8wsqw1IDuWON2Ef5tn/P/Wq7A/x5ORZ21dKCgzgr5q' # 1234
     birthdate: '2020-01-07T13:28:59.308Z'
     roles:
       - "@role4"
@@ -12,7 +12,7 @@ items:
     email: 'jane.doe@gmail.com'
     firstName: 'Jane'
     lastName: 'Doe'
-    password: '1234'
+    password: '$2a$10$heNK/vcYqzncwhmzjDp3Z.aGM4tbT3BXsqrUZYWbX.hNuXo1pv50O' # 1234
     birthdate: '2020-01-07T13:30:27.308Z'
     roles:
       - "@role1"

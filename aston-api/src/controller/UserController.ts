@@ -24,25 +24,27 @@ export class UserController {
             response.status(400);
             return { error: 'Bad Request', code: 400 };
         }
-
+        
         user.password = await bcryptjs.hashSync(user.password);
-
+        
         const repoRole = getRepository(Role);
-        const role = await repoRole.findOne({ where: { name: 'User' } })
+        const role = await repoRole.findOne({ where: { name: 'User' } });
+
         if (!role) {
             response.status(500);
             return { error: 'Internal Server Error', code: 500 };
         }
-
+        
         user.roles = [role];
-
+        
         try {
             response.status(201);
             await this.userRepository.save(user);
         } catch (error) {
+            console.log(error);
             if (error.code === 'ER_DUP_ENTRY') {
                 response.status(409);
-                return { error: 'Conflict', code: error.code };
+                return { error: 'Conflict duplicate user', code: 409 };
             }
             console.log(error);
             response.status(422);
