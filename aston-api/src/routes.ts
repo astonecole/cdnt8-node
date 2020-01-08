@@ -1,7 +1,20 @@
 import { UserController } from "./controller/UserController";
 import { DefaultController } from "./controller/DefaultController";
 
-export const Routes = [{
+export const Routes = [
+{
+    method: 'post',
+    route: '/users/register',
+    controller: UserController,
+    action: 'register'
+},
+{
+    method: 'post',
+    route: '/users/authenticate',
+    controller: UserController,
+    action: 'authenticate'
+},
+{
     method: "get",
     route: "/",
     controller: DefaultController,

@@ -42,6 +42,18 @@ export class User {
     @CreateDateColumn()
     createdAt: Date;
 
+    hasRole(name: string) {
+        return this.roles.some((role: Role) => {
+            return role.name === name;
+        });
+    }
+
+    hasPrivilege(operation: string) {
+        return this.roles.some((role: Role) => {
+            return role.hasPermission(operation);
+        });
+    }
+
     @UpdateDateColumn()
     updatedAt: Date;
 

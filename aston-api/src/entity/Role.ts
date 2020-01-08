@@ -31,6 +31,12 @@ export class Role {
     @JoinTable({ name: 'role_has_permission' })
     permissions: Permission[];
 
+    hasPermission(operation: string): boolean {
+        return this.permissions.some((perm: Permission) => {
+            return perm.operation === operation;
+        });
+    }
+
     @IsDate()
     @CreateDateColumn()
     createdAt: Date;

@@ -10,7 +10,9 @@ export class Permission {
     @Column()
     operation: string;
 
+    @Column()
+    description: string;
+
     @ManyToMany(type => Role, role => role.permissions)
     roles: Role[];
-
 }
