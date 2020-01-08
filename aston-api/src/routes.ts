@@ -1,5 +1,6 @@
 import { UserController } from "./controller/UserController";
 import { DefaultController } from "./controller/DefaultController";
+import { jwtCheck } from "../middleware/jwt-check";
 
 export const Routes = [
 {
@@ -24,7 +25,8 @@ export const Routes = [
     method: "get",
     route: "/users",
     controller: UserController,
-    action: "all"
+    action: "all",
+    middlewares: jwtCheck
 }, {
     method: "get",
     route: "/users/:id",
